@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  weekday: MyString
+  opening_hour: MyString
+  opening_minute: MyString
+  closing_hour: MyString
+  closing_minute: MyString
+
+two:
+  weekday: MyString
+  opening_hour: MyString
+  opening_minute: MyString
+  closing_hour: MyString
+  closing_minute: MyString
