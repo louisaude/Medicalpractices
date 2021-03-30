@@ -24,7 +24,6 @@ class HealthCareCompaniesController < ApplicationController
   end
 
   def update
-    # @health_care_company.update(company_params)
     if @health_care_company.update(company_params)
       redirect_to health_care_company_path
     else

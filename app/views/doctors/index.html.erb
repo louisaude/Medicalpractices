@@ -1,0 +1,12 @@
+<h1>This practice's doctors</h1>
+<% @doctors.each do |doctor| %>
+<ul>
+<%= doctor.name %>
+<%=  " id:#{doctor.id}" %>
+<%= "company: #{doctor.health_care_company.id }"%>
+  <%= link_to "show details", health_care_company_doctor_path(@health_care_company, doctor), method: :get %>
+  <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, doctor), method: :delete %>
+</ul>
+<% end %>
+ <%= link_to "Add a doctor", new_health_care_company_doctor_path, method: :get %>
+

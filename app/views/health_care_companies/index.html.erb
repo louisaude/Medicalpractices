@@ -2,5 +2,7 @@
 <% @health_care_companies.each do |company| %>
 <%= company.name %>
 <%= link_to "More info", health_care_company_path(company), method: :get %>
+  <%= link_to "Display doctor hours", health_care_company_doctors_path(company) %>
+
 <% end %>
 <%= link_to "Create company page", new_health_care_company_path, method: :get %>
