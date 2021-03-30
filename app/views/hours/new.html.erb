@@ -1,9 +1,9 @@
 <h1>new entry</h1>
 <%= simple_form_for @hour, url: health_care_company_doctor_hours_path do |f| %>
-  <%= f.input :weekday %>
-  <%= f.input :opening_hour%>
-  <%= f.input :opening_minute %>
-  <%= f.input :closing_hour %>
-  <%= f.input :closing_minute %>
+  <%= f.input :weekday , collection: Hour::WEEKDAY %>
+  <%= f.input :opening_hour, collection: Hour::HOUR %>
+  <%= f.input :opening_minute, collection: Hour::MINUTE %>
+  <%= f.input :closing_hour, collection: Hour::HOUR %>
+  <%= f.input :closing_minute, collection: Hour::MINUTE %>
   <%= f.submit "Add" %>
 <% end %>
