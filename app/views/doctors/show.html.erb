@@ -1,3 +1,16 @@
 <%= @doctor.name %>
+  <%= link_to "hours", health_care_company_doctor_hours_path(@health_care_company, @doctor), method: :get  %>
+<% hours = @doctor.hours.all %>
+  <% hours.each do |h| %>
+  <ul>
+  <%= h.weekday %>
+  <%= "shift id :#{h.id}" %>
+  <%= h.opening_hour %>
+  <%= h.opening_minute %>
+  <%= h.closing_hour %>
+  <%= h.closing_minute %>
+  <% end %>
+  </ul>
 <%= link_to "Edit information", edit_health_care_company_doctor_path , method: :get %>
+<%= link_to "Add hours", new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get %>
 <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, @doctor), method: :delete %>

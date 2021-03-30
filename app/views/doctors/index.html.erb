@@ -6,6 +6,17 @@
 <%= "company: #{doctor.health_care_company.id }"%>
   <%= link_to "show details", health_care_company_doctor_path(@health_care_company, doctor), method: :get %>
   <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, doctor), method: :delete %>
+  <% hours = doctor.hours.all %>
+  <% hours.each do |h| %>
+  <ul>
+    <%= h.weekday %>
+  <%= h.opening_hour %>
+  <%= h.opening_minute %>
+  <%= h.closing_hour %>
+  <%= h.closing_minute %>
+  <% end %>
+  </ul>
+
 </ul>
 <% end %>
  <%= link_to "Add a doctor", new_health_care_company_doctor_path, method: :get %>
