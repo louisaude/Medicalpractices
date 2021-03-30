@@ -1,0 +1,4 @@
+<%= @health_care_company.name %>
+  <%= link_to "Edit info", edit_health_care_company_path(@health_care_company), method: :get %>
+  <%= link_to "Delete ", health_care_company_path(@health_care_company), method: :delete %>
+  <%= link_to "Back to companies list", health_care_companies_path %>
