@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_03_30_135654) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "doctors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "health_care_company_id", null: false
+    t.bigint "health_care_company_id", null: false
     t.index ["health_care_company_id"], name: "index_doctors_on_health_care_company_id"
   end
 
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 2021_03_30_135654) do
     t.string "closing_minute"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "doctor_id", null: false
-    t.integer "health_care_company_id", null: false
+    t.bigint "doctor_id", null: false
+    t.bigint "health_care_company_id", null: false
     t.index ["doctor_id"], name: "index_hours_on_doctor_id"
     t.index ["health_care_company_id"], name: "index_hours_on_health_care_company_id"
   end
