@@ -261,6 +261,8 @@ office = HealthCareCompany.create(name: "Healthy and happy medical practice")
   gg4.closing_minute = '30'
   gg4.save
 
+  # test
+
   gg5 = Hour.new(doctor: anthony, health_care_company: office)
   gg5.weekday = 'Friday'
   gg5.opening_hour = '9'
