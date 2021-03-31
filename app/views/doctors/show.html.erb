@@ -1,16 +1,15 @@
-<%= @doctor.name %>
-  <%= link_to "hours", health_care_company_doctor_hours_path(@health_care_company, @doctor), method: :get  %>
+<div class="list-container">
+<%= "Doctor #{@doctor.name}" %>
 <% hours = @doctor.hours.all %>
-  <% hours.each do |h| %>
-  <ul>
-  <%= h.weekday %>
-  <%= "shift id :#{h.id}" %>
-  <%= h.opening_hour %>
-  <%= h.opening_minute %>
-  <%= h.closing_hour %>
-  <%= h.closing_minute %>
-  <% end %>
-  </ul>
-<%= link_to "Edit information", edit_health_care_company_doctor_path , method: :get %>
-<%= link_to "Add hours", new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get %>
-<%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, @doctor), method: :delete %>
+    <% hours.each do |h| %>
+      <ul>
+        <%= "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+      </ul>
+    <% end %>
+
+<%= link_to "Edit name", edit_health_care_company_doctor_path , method: :get ,class: "btn btn-light"%>
+<%= link_to "Add hours", new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get ,class: "btn btn-light"%>
+<%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, @doctor), method: :delete ,class: "btn btn-light"%>
+<%= link_to "Go back to doctors list", health_care_company_doctors_path(@health_care_company), method: :get ,class: "btn btn-light"%>
+
+</div>

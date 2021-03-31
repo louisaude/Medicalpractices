@@ -1,8 +1,10 @@
-<h1>Companies index page</h1> 
+<div class="list-container"><h1>Health care practices near you.</h1> 
 <% @health_care_companies.each do |company| %>
-<%= company.name %>
-<%= link_to "More info", health_care_company_path(company), method: :get %>
-  <%= link_to "Display doctor hours", health_care_company_doctors_path(company) %>
-
+  <ul>
+    <%= company.name %>
+    <%= link_to "Display doctor hours", health_care_company_doctors_path(company) ,class: "btn btn-light"%>
+    <%= link_to "Show and edit info", health_care_company_path(company), method: :get ,class: "btn btn-light"%>
+  </ul>
 <% end %>
-<%= link_to "Create company page", new_health_care_company_path, method: :get %>
+  <%= link_to "Create practice page", new_health_care_company_path, method: :get ,class: "btn btn-light"%>
+</div>

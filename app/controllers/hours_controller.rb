@@ -27,6 +27,7 @@ class HoursController < ApplicationController
 
   def destroy
     @hour.destroy
+    redirect_to health_care_company_doctors_path
   end
 
 

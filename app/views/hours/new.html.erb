@@ -1,9 +1,16 @@
-<h1>new entry</h1>
-<%= simple_form_for @hour, url: health_care_company_doctor_hours_path do |f| %>
-  <%= f.input :weekday , collection: Hour::WEEKDAY %>
-  <%= f.input :opening_hour, collection: Hour::HOUR %>
-  <%= f.input :opening_minute, collection: Hour::MINUTE %>
-  <%= f.input :closing_hour, collection: Hour::HOUR %>
-  <%= f.input :closing_minute, collection: Hour::MINUTE %>
-  <%= f.submit "Add" %>
-<% end %>
+<div class="list-container">
+  <h1>Add opening time</h1>
+  <%= simple_form_for @hour, url: health_care_company_doctor_hours_path do |f| %>
+    <%= "Weekday" %>
+    <%= f.input_field :weekday , collection: Hour::WEEKDAY %>
+    <%= "Starting time" %>
+    <%= f.input_field :opening_hour, collection: Hour::HOUR %>
+    <%= f.input_field :opening_minute, collection: Hour::MINUTE %>
+ <%= "Ending time" %>
+    <%= f.input_field :closing_hour, collection: Hour::HOUR %>
+    <%= f.input_field :closing_minute, collection: Hour::MINUTE %>
+    <%= f.submit "Add",class: "btn btn-light"  %>
+  <% end %>
+</div>
+
+

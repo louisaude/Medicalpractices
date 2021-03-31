@@ -1,20 +1,31 @@
+<div class="list-container">
 <h1>This practice's doctors</h1>
 <% t= Time.now %>
-<%= "#{t.day}/ #{t.month}/ #{t.year}" %>
-<%= Date.today.strftime("%A") %>
+<%= "Today is #{Date.today.strftime("%A")} the #{t.day}/#{t.month}/#{t.year}" %>
 
 <% @doctors.each do |doctor| %>
-<ul>
-<%= doctor.name %>
-<%=  " id:#{doctor.id}" %>
-<%= "company: #{doctor.health_care_company.id }"%>
-  <%= link_to "show details", health_care_company_doctor_path(@health_care_company, doctor), method: :get %>
-  <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, doctor), method: :delete %>
-  <% hours = doctor.hours.all %>
-  <% hours.each do |h| %>
-  <%= "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-  <% end %>
-</ul>
+  <ul>
+    <%= "Doctor #{doctor.name}"%>
+      <%= link_to "show details", health_care_company_doctor_path(@health_care_company, doctor), method: :get ,class: "btn btn-light"%>
+      <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, doctor), method: :delete ,class: "btn btn-light"%>
+      <% hours = doctor.hours.all %>
+      <% hours.each do |h| %>
+        <ul>
+        <% if  %>
+          <% h.weekday == Date.today.strftime("%A") %>
+            <b><%=  "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}"  %> </b>
+          <% else %>
+            <%= "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+          <% end %>
+        
+          <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </ul>   
+      <% end %>
+  </ul>
 <% end %>
- <%= link_to "Add a doctor", new_health_care_company_doctor_path, method: :get %>
+
+ <%= link_to "Add a doctor", new_health_care_company_doctor_path, method: :get ,class: "btn btn-light"%>
+ <%= link_to "Go back to practices list", health_care_companies_path, method: :get ,class: "btn btn-light"%>
+
+</div>
 
