@@ -1,10 +1,6 @@
 class HoursController < ApplicationController
-  # before_action :find_company, only: [:create]
   before_action :find_doctor, only: [:show]
-  before_action :find_hour, only: [:destroy, :show]
-
-  def show
-  end
+  before_action :find_hour, only: %i[destroy show]
 
   def index
     @hours = Hour.where(doctor: @doctor)
@@ -13,7 +9,7 @@ class HoursController < ApplicationController
   def new
     @hour = Hour.new
   end
-  
+
   def create
     @hour = Hour.new(hour_params)
     @hour.health_care_company_id = params[:health_care_company_id]
@@ -30,9 +26,7 @@ class HoursController < ApplicationController
     redirect_to health_care_company_doctors_path
   end
 
-
-
-private
+  private
 
   def hour_params
     params.require(:hour).permit(:weekday, :opening_hour, :opening_minute, :closing_hour, :closing_minute)
@@ -41,10 +35,8 @@ private
   def find_company
     @health_care_company = HealthCareCompany.find(params[:health_care_company_id])
   end
-  
- 
+
   def find_hour
     @hour = Hour.find(params[:id])
   end
-
 end

@@ -1,6 +1,7 @@
-<div class="list-container">
+<div class="doctor_form_container">
+
   <%= simple_form_for @doctor, url: health_care_company_doctor_path(@health_care_company, @doctor) do |f| %>
     <%= f.input :name %>
-    <%= f.submit class: "btn btn-light" %>
+    <%= f.submit%>
   <% end %>
 </div>

@@ -1,3 +1,8 @@
 <div class="list-container">
-  <%= render "doctor_form" %>
+  <div class="doctor_form_container">
+    <%= simple_form_for @doctor, url: health_care_company_doctors_path do |f| %>
+      <%= f.input :name %>
+      <%= f.submit "Confirm",class: "btn btn-light"%>
+    <% end %>
+  </div>
 </div>
