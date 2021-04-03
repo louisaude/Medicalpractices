@@ -3,7 +3,8 @@
 <% hours = @doctor.hours.all %>
     <% hours.each do |h| %>
       <ul>
-        <%= "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+        <%= "id:#{h.id}#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+        <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, @doctor, h), method: :delete,class: "btn btn-light"  %>
       </ul>
     <% end %>
 

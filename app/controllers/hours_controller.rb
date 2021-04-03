@@ -1,5 +1,4 @@
 class HoursController < ApplicationController
-  before_action :find_doctor, only: [:show]
   before_action :find_hour, only: %i[destroy show]
 
   def index
@@ -22,18 +21,16 @@ class HoursController < ApplicationController
   end
 
   def destroy
+    @health_care_company = HealthCareCompany.find(params[:health_care_company_id])
+    @doctor = Doctor.find(params[:doctor_id])
     @hour.destroy
-    redirect_to health_care_company_doctors_path
+    redirect_to health_care_company_doctor_path(@health_care_company, @doctor)
   end
 
   private
 
   def hour_params
     params.require(:hour).permit(:weekday, :opening_hour, :opening_minute, :closing_hour, :closing_minute)
-  end
-
-  def find_company
-    @health_care_company = HealthCareCompany.find(params[:health_care_company_id])
   end
 
   def find_hour

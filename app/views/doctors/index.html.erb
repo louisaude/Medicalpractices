@@ -12,71 +12,69 @@
       <% hours = doctor.hours.all %>
       <div class="week">
         <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
-                <i class="fas fa-trash-alt"></i>
+          <%= weekday == "Monday" ? "<b>Monday</b>".html_safe : "Monday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Monday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div> 
+         <div class="day">
+          <%= weekday == "Tuesday" ? "<b>Tuesday</b>".html_safe : "Tuesday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Tuesday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div>
+         <div class="day">
+          <%= weekday == "Wednesday" ? "<b>Wednesday</b>".html_safe : "Wednesday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Wednesday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div> 
+         <div class="day">
+          <%= weekday == "Thursday" ? "<b>Thursday</b>".html_safe : "Thursday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Thursday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div> 
+         <div class="day">
+          <%= weekday == "Friday" ? "<b>Friday</b>".html_safe : "Friday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Friday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div> 
+         <div class="day">
+          <%= weekday == "Saturday" ? "<b>Saturday</b>".html_safe : "Saturday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Saturday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      <div class="day">
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <% hours.each do |h| %>
-                <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-                <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+        </div> 
+         <div class="day">
+          <%= weekday == "Sunday" ? "<b>Sunday</b>".html_safe : "Sunday" %>
+          <% hours.each do |h| %>
+            <% if h.weekday == "Sunday"%>
+              <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+              <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
             <% end %>
           <% end %>  
-      </div> 
-      </div>
-      
+        </div>     
+      </div>  
     </div>  
   <% end %>
 
@@ -84,12 +82,3 @@
   <%= link_to "Go back to practices list", health_care_companies_path, method: :get ,class: "btn btn-light"%>
 
 
-<% if false %>
-      <% hours.each do |h| %>
-          <% if weekday == "Saturday"%>
-            <b><%= "Mondays" %></b>
-            <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-            <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
-          <% end %>
-        <% end %>  
-<% end %>
