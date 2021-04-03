@@ -8,6 +8,7 @@
       <%= "Doctor #{doctor.name}"%>
       <%= link_to "show details", health_care_company_doctor_path(@health_care_company, doctor), method: :get ,class: "btn btn-light"%>
       <%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, doctor), method: :delete ,class: "btn btn-light"%>
+      <i class="fas fa-trash-alt"></i>
       <% hours = doctor.hours.all %>
       <div class="week">
         <div class="day">
@@ -16,6 +17,7 @@
             <% hours.each do |h| %>
                 <%= "From #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
                 <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+                <i class="fas fa-trash-alt"></i>
             <% end %>
           <% end %>  
       </div> 
