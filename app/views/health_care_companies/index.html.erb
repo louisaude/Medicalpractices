@@ -1,6 +1,6 @@
-<div class="container"><h1 class="white-bg">Health care practices near you.</h1> 
+<div class="container"><h1 class="white-bg shadow">Health care practices near you.</h1> 
 <% @health_care_companies.each do |company| %>
-  <div class ="container white-bg company">
+  <div class ="container white-bg shadow company">
     <%= company.name %>
     <div>
        <%= link_to ('<i class="fas fa-info-circle"></i>').html_safe, health_care_company_doctors_path(company) ,class: "btn btn-light"%>

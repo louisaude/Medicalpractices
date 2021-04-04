@@ -1,6 +1,6 @@
-<div class="center-div">
+<div>
   
-  <div class="container white-bg">
+  <div class="container white-bg shadow center-div shadow">
     <% if (@health_care_company.name).end_with?('s') %>
     <h1> <%= "#{@health_care_company.name}' doctors." %> </h1>
   <% else %>
@@ -11,8 +11,8 @@
   <%= "Today is #{weekday} the #{t.day}/#{t.month}/#{t.year}" %>
   </div>
   <% @doctors.each do |doctor| %>
-    <div class="container">
-      <div class="doctor-info white-bg">
+    <div class="container center-div">
+      <div class="doctor-info white-bg shadow">
         <%= "Doctor #{doctor.name}"%>
         <div>
           <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, health_care_company_doctor_path(@health_care_company, doctor), method: :get ,class: "btn btn-light"%>
@@ -22,7 +22,7 @@
            
       <% hours = doctor.hours.all %>
       <div class="week">
-        <div class="day white-bg">
+        <div class="day white-bg shadow">
           <span class="black-bd day-header"> <%= weekday == "Monday" ? "<b>Monday</b>".html_safe : "Monday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Monday"%>
@@ -31,7 +31,7 @@
             <% end %>
           <% end %>  
         </div> 
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
           <span class="black-bd day-header"><%= weekday == "Tuesday" ? "<b>Tuesday</b>".html_safe : "Tuesday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Tuesday"%>
@@ -40,7 +40,7 @@
             <% end %>
           <% end %>  
         </div>
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
           <span class="black-bd day-header"> <%= weekday == "Wednesday" ? "<b>Wednesday</b>".html_safe : "Wednesday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Wednesday"%>
@@ -49,7 +49,7 @@
             <% end %>
           <% end %>  
         </div> 
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
           <span class="black-bd day-header"> <%= weekday == "Thursday" ? "<b>Thursday</b>".html_safe : "Thursday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Thursday"%>
@@ -58,7 +58,7 @@
             <% end %>
           <% end %>  
         </div> 
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
           <span class="black-bd day-header"> <%= weekday == "Friday" ? "<b>Friday</b>".html_safe : "Friday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Friday"%>
@@ -67,7 +67,7 @@
             <% end %>
           <% end %>  
         </div> 
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
          <span class="black-bd day-header">  <%= weekday == "Saturday" ? "<b>Saturday</b>".html_safe : "Saturday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Saturday"%>
@@ -76,7 +76,7 @@
             <% end %>
           <% end %>  
         </div> 
-         <div class="day white-bg">
+         <div class="day white-bg shadow">
          <span class="black-bd day-header"> <%= weekday == "Sunday" ? "<b>Sunday</b>".html_safe : "Sunday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Sunday"%>
@@ -88,7 +88,7 @@
       </div>  
     </div>  
   <% end %>
-  <div class="container">
+  <div class="container center-div">
     <%= link_to ('<i class="fas fa-arrow-left"></i>').html_safe, health_care_companies_path, method: :get ,class: "btn btn-light"%>
     <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_doctor_path, method: :get ,class: "btn btn-light"%>  
   </div>
