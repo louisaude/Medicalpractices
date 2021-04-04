@@ -1,16 +1,20 @@
-<div class="list-container">
-<%= "Doctor #{@doctor.name}" %>
-<% hours = @doctor.hours.all %>
-    <% hours.each do |h| %>
-      <ul>
-        <%= "id:#{h.id}#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-        <%= link_to "Delete opening time", health_care_company_doctor_hour_path(@health_care_company, @doctor, h), method: :delete,class: "btn btn-light"  %>
-      </ul>
-    <% end %>
-
-<%= link_to "Edit name", edit_health_care_company_doctor_path , method: :get ,class: "btn btn-light"%>
-<%= link_to "Add hours", new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get ,class: "btn btn-light"%>
-<%= link_to "Delete doctor page", health_care_company_doctor_path(@health_care_company, @doctor), method: :delete ,class: "btn btn-light"%>
-<%= link_to "Go back to doctors list", health_care_company_doctors_path(@health_care_company), method: :get ,class: "btn btn-light"%>
-
+<div class="container hours">
+  <div class="container">
+    <%= "Doctor #{@doctor.name}" %>
+    <div>
+        <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, edit_health_care_company_doctor_path , method: :get ,class: "btn btn-light"%>
+    <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_path(@health_care_company, @doctor), method: :delete ,class: "btn btn-light"%>
+    </div>
+  </div>
+  <% hours = @doctor.hours.all %>
+  <% hours.each do |h| %> 
+    <div class="container">
+      <%= "#{h.weekday} from #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
+      <%= link_to ('<i class="fas fa-trash-alt test"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, @doctor, h), method: :delete,class: "btn btn-light"  %>
+    </div>
+  <% end %>
+  <div class="container right-buttons">
+    <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get ,class: "btn btn-light"%>
+    <%= link_to ('<i class="fas fa-undo"></i>').html_safe, health_care_company_doctors_path(@health_care_company), method: :get ,class: "btn btn-light"%>
+  </div>
 </div>
