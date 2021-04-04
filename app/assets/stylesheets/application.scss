@@ -21,3 +21,10 @@
 @import "config/body.scss";
 @import "doctors.scss";
 @import "hours.scss";
+@import "health_care_companies.scss";
+
+body {
+  background-image: url("igor-son-FV_PxCqgtwc-unsplash.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

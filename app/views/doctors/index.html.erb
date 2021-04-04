@@ -1,6 +1,6 @@
-<div >
+<div class="center-div">
   
-  <div class="container">
+  <div class="container white-bg">
     <% if (@health_care_company.name).end_with?('s') %>
     <h1> <%= "#{@health_care_company.name}' doctors." %> </h1>
   <% else %>
@@ -12,7 +12,7 @@
   </div>
   <% @doctors.each do |doctor| %>
     <div class="container">
-      <div class="doctor-info">
+      <div class="doctor-info white-bg">
         <%= "Doctor #{doctor.name}"%>
         <div>
           <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, health_care_company_doctor_path(@health_care_company, doctor), method: :get ,class: "btn btn-light"%>
@@ -22,66 +22,66 @@
            
       <% hours = doctor.hours.all %>
       <div class="week">
-        <div class="day">
-          <span> <%= weekday == "Monday" ? "<b>Monday</b>".html_safe : "Monday" %></span>
+        <div class="day white-bg">
+          <span class="black-bd day-header"> <%= weekday == "Monday" ? "<b>Monday</b>".html_safe : "Monday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Monday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div> 
-         <div class="day">
-          <span><%= weekday == "Tuesday" ? "<b>Tuesday</b>".html_safe : "Tuesday" %></span>
+         <div class="day white-bg">
+          <span class="black-bd day-header"><%= weekday == "Tuesday" ? "<b>Tuesday</b>".html_safe : "Tuesday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Tuesday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div>
-         <div class="day">
-          <span> <%= weekday == "Wednesday" ? "<b>Wednesday</b>".html_safe : "Wednesday" %></span>
+         <div class="day white-bg">
+          <span class="black-bd day-header"> <%= weekday == "Wednesday" ? "<b>Wednesday</b>".html_safe : "Wednesday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Wednesday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div> 
-         <div class="day">
-          <span> <%= weekday == "Thursday" ? "<b>Thursday</b>".html_safe : "Thursday" %></span>
+         <div class="day white-bg">
+          <span class="black-bd day-header"> <%= weekday == "Thursday" ? "<b>Thursday</b>".html_safe : "Thursday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Thursday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div> 
-         <div class="day">
-          <span> <%= weekday == "Friday" ? "<b>Friday</b>".html_safe : "Friday" %></span>
+         <div class="day white-bg">
+          <span class="black-bd day-header"> <%= weekday == "Friday" ? "<b>Friday</b>".html_safe : "Friday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Friday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div> 
-         <div class="day">
-         <span>  <%= weekday == "Saturday" ? "<b>Saturday</b>".html_safe : "Saturday" %></span>
+         <div class="day white-bg">
+         <span class="black-bd day-header">  <%= weekday == "Saturday" ? "<b>Saturday</b>".html_safe : "Saturday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Saturday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div> 
-         <div class="day">
-         <span> <%= weekday == "Sunday" ? "<b>Sunday</b>".html_safe : "Sunday" %></span>
+         <div class="day white-bg">
+         <span class="black-bd day-header"> <%= weekday == "Sunday" ? "<b>Sunday</b>".html_safe : "Sunday" %></span>
           <% hours.each do |h| %>
             <% if h.weekday == "Sunday"%>
               <%= " #{h.opening_hour.rjust(2, '0')}:#{h.opening_minute.rjust(2, '0')} to #{h.closing_hour.rjust(2, '0')}:#{h.closing_minute.rjust(2, '0')}" %>
-              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "btn btn-light"  %>
+              <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_doctor_hour_path(@health_care_company, doctor, h), method: :delete,class: "delete-hour btn btn-light"  %>
             <% end %>
           <% end %>  
         </div>     
@@ -92,6 +92,9 @@
     <%= link_to ('<i class="fas fa-arrow-left"></i>').html_safe, health_care_companies_path, method: :get ,class: "btn btn-light"%>
     <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_doctor_path, method: :get ,class: "btn btn-light"%>  
   </div>
+</div>
+
+
 
 
 

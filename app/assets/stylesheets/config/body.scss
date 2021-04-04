@@ -1,7 +1,16 @@
-body {
-  // background-color: #eae7dc36;
+* {
+  border: black solid 1px;
 }
 
-* {
-  // border: black solid 1px;
+.container {
+  margin: 2em;
+  padding: 0px;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.black-bd {
+  border: solid black 1px;
 }

@@ -1,6 +1,9 @@
 <div class="container">
+  <div class="container white-bg company">
 <%= @health_care_company.name %>
-  <%= link_to "Edit info", edit_health_care_company_path(@health_care_company), method: :get,class: "btn btn-light" %>
-  <%= link_to "Delete ", health_care_company_path(@health_care_company), method: :delete,class: "btn btn-light" %>
-  <%= link_to "Back to companies list", health_care_companies_path,class: "btn btn-light" %>
+  <%= link_to ('<i class="fas fa-arrow-left"></i>').html_safe, health_care_companies_path,class: "btn btn-light" %>
+  <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, edit_health_care_company_path(@health_care_company), method: :get,class: "btn btn-light" %>
+  <%= link_to ('<i class="fas fa-trash-alt"></i>').html_safe, health_care_company_path(@health_care_company), method: :delete,class: "btn btn-light" %>
 </div>
+</div>
+

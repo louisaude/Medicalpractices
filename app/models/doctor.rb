@@ -3,7 +3,7 @@ class Doctor < ApplicationRecord
   has_many :hours, dependent: :destroy
   before_save :capitalize_name
 
-  validates :name, presence: true, length: { minimum: 5, maximum: 20 }
+  validates :name, presence: true, length: { minimum: 5, maximum: 40 }
 
   private
 

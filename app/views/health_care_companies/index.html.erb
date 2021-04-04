@@ -1,10 +1,12 @@
-<div class="container"><h1>Health care practices near you.</h1> 
+<div class="container"><h1 class="white-bg">Health care practices near you.</h1> 
 <% @health_care_companies.each do |company| %>
-  <ul>
+  <div class ="container white-bg company">
     <%= company.name %>
-    <%= link_to ('<i class="fas fa-info-circle"></i>').html_safe, health_care_company_doctors_path(company) ,class: "btn btn-light"%>
-    <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, health_care_company_path(company), method: :get ,class: "btn btn-light"%>
-  </ul>
+    <div>
+       <%= link_to ('<i class="fas fa-info-circle"></i>').html_safe, health_care_company_doctors_path(company) ,class: "btn btn-light"%>
+      <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, health_care_company_path(company), method: :get ,class: "btn btn-light"%>
+    </div>
+  </div>
 <% end %>
   <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_path, method: :get ,class: "btn btn-light"%>
 </div>
