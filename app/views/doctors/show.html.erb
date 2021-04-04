@@ -14,7 +14,7 @@
     </div>
   <% end %>
   <div class="container right-buttons">
+    <%= link_to ('<i class="fas fa-arrow-left"></i>').html_safe, health_care_company_doctors_path(@health_care_company), method: :get ,class: "btn btn-light"%>
     <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_doctor_hour_path(@health_care_company, @doctor), method: :get ,class: "btn btn-light"%>
-    <%= link_to ('<i class="fas fa-undo"></i>').html_safe, health_care_company_doctors_path(@health_care_company), method: :get ,class: "btn btn-light"%>
   </div>
 </div>

@@ -2,9 +2,10 @@
 <% @health_care_companies.each do |company| %>
   <ul>
     <%= company.name %>
-    <%= link_to "Display doctor hours", health_care_company_doctors_path(company) ,class: "btn btn-light"%>
-    <%= link_to "Show and edit info", health_care_company_path(company), method: :get ,class: "btn btn-light"%>
+    <%= link_to ('<i class="fas fa-info-circle"></i>').html_safe, health_care_company_doctors_path(company) ,class: "btn btn-light"%>
+    <%= link_to ('<i class="fas fa-wrench"></i>').html_safe, health_care_company_path(company), method: :get ,class: "btn btn-light"%>
   </ul>
 <% end %>
-  <%= link_to "Create practice page", new_health_care_company_path, method: :get ,class: "btn btn-light"%>
+  <%= link_to ('<i class="fas fa-plus-square"></i>').html_safe, new_health_care_company_path, method: :get ,class: "btn btn-light"%>
 </div>
+
