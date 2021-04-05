@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was coded as for a calling cahllenge for a full stack position.
 
 Things you may want to cover:
+The stack is as follows:
+Ruby 2.6.6
+Rails 6
+Bootstrap 4
+SCSS
+SQLite Database
 
-* Ruby version
+You can browse it at https://shielded-anchorage-67127.herokuapp.com/
 
-* System dependencies
+As per the challenge's instructions, this app allows the user to create  Medical practices pages, add doctor hours and display them.
 
-* Configuration
+Due to time constraints, there is quite some room for improvement. Main points include:
+1-Adding validations to models to avoid duplication, timeslots overlap
+2-Adding flashes to deletion buttons
+3-Cleaning up the SCSS and assets pipeline as the last bout of styling was very much a rush job.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
